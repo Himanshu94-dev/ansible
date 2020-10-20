@@ -2,3 +2,5 @@ yum update all
 #no required reboot
 #no need reboot
 
+#lvm extent
+#lvm reduce

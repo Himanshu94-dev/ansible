@@ -1,0 +1,19 @@
+-
+ hosts: all
+ tasks:
+ - yum:
+     name: httpd
+     state: present
+     
+   register: env
+ - debug:
+     var: env
+
+ - name: service start
+   service:
+      name: httpd
+      state: stopped
+   register: abc
+ - debug:
+    msg: "Ansible When httpd is stooped."
+   when: abc.state=="stopped"
